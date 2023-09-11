@@ -1,0 +1,3 @@
+public List<ProductDto> getAllProducts() {
+    // Implementation to fetch all products
+}

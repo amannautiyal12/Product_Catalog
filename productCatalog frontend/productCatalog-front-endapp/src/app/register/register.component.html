@@ -1,0 +1,49 @@
+<div class="container mt-4" >
+  <form>
+    <h1 class="signUpHeading">Sign Up</h1>
+    <div class="form-group">
+      <label>Name</label>
+      <input
+        type="text"
+        [(ngModel)]="userName"
+        [ngModelOptions]="{ standalone: true }"
+        class="form-control"
+        id="uName"
+        placeholder="Enter Name"
+      />
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input
+        type="email"
+        [(ngModel)]="userEmail"
+        [ngModelOptions]="{ standalone: true }"
+        class="form-control"
+        id="uEmail"
+        placeholder="Enter Email"
+      />
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input
+        type="password"
+        [(ngModel)]="userPassword"
+        [ngModelOptions]="{ standalone: true }"
+        id="uPass"
+        class="form-control"
+        placeholder="Enter Password"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-4" (click)="save()">
+      Sign Up
+    </button>
+  </form>
+</div>
+<!-- why -->
+<div>
+    <a routerLink="/login" style="position: absolute; right:30%; margin-top:32%">Already have an account?</a>
+</div>
+
+
+

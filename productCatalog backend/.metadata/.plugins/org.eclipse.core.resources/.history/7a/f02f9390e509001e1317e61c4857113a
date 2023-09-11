@@ -1,0 +1,103 @@
+package com.aman.productCatalog.Entity;
+
+import java.util.Arrays;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
+import jakarta.persistence.Table;
+
+
+@Entity
+@Table(name="productTable")
+public class Products {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	int pID;
+	@Column(name="productName")
+	String name;
+	@Column(name="productBrand")
+	String brand;
+	@Column(name="productDescription")
+	String  description;
+	@Column(name="productCode")
+	String  code;
+	@Lob @Basic(fetch= FetchType.LAZY)      
+	@Column(length=100000000 , name="")               
+	byte [] image;
+	
+	@Column(name="productPrice")
+	double  price;
+	
+	public Products(int iD, String name, String brand, String description, String code, Byte[] image, double price) {
+		super();
+		this.pID = iD;
+		this.name = name;
+		this.brand = brand;
+		this.description = description;
+		this.code = code;
+		this.image = image;
+		this.price = price;
+	}
+	
+	public Products() {  }
+	
+	public int getID() {
+		return pID;
+	}
+	public void setID(int iD) {
+		pID = iD;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getBrand() {
+		return brand;
+	}
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public Byte[] getImage() {
+		return image;
+	}
+	public void setImage(Byte[] image) {
+		this.image = image;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+	@Override
+	public String toString() {
+		return "Products [ID=" + pID + ", name=" + name + ", brand=" + brand + ", description=" + description + ", code="
+				+ code + ", image=" + Arrays.toString(image) + ", price=" + price + "]";
+	}
+	 
+	
+	
+	
+	
+	 
+	 
+}
